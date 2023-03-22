@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Output Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></head>
+  <body>
+    <img src="#">
+    
+    <input type="text" name="search">
+    <button >search</button> 
+
+<script>
+    const img = document.querySelector('img');
+    const search=document.querySelector('button') 
+    search.addEventListener('click',function(){
+      const search=document.querySelector('input').value 
+      fetch(`https://api.giphy.com/v1/gifs/translate?api_key=vZFAgKDcHo6iogDai9Ci989ubQU86Rds&s=${search}`)
+    .then(function(response){
+        return response.json()
+    }).then(function(response) {
+      img.src = response.data.images.original.url;
+    })
+
+    })  
+    </script>
+ </body>
+</html>
