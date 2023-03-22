@@ -15,7 +15,7 @@
     const search=document.querySelector('button') 
     search.addEventListener('click',function(){
       const search=document.querySelector('input').value 
-      fetch(`https://api.giphy.com/v1/gifs/translate?api_key=vZFAgKDcHo6iogDai9Ci989ubQU86Rds&s=${search}`)
+      fetch(`https://api.giphy.com/v1/gifs/translate?api_key=vZFAgKDcHo6iogDai9Ci989ubQU86Rds&s=${search},{mode: 'cors'}`)
     .then(function(response){
         return response.json()
     }).then(function(response) {
